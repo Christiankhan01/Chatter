@@ -27,10 +27,11 @@ const Chat = ({ location }) => {
 
         console.log(socket);
 
-        socket.emit('join', { name, room }, () => {
-
+        socket.emit('join', { name, room }, (error) => {
+            if(error) {
+                alert(error); 
+            }
         });
-
         return () => {
             socket.emit('disconnect');
 
@@ -39,10 +40,10 @@ const Chat = ({ location }) => {
     }, [ENDPOINT, location.search]);
 
     useEffect(() => {
-        socket.on('message', (message) => {
+        socket.on('message', message => {
             setMessages(messages => [...messages, message]);
         });
-    }, [messages]);
+    }, []);
 
     const sendMessage = (event) => {
         event.preventDefault();
@@ -60,6 +61,7 @@ const Chat = ({ location }) => {
                 <Infobar room={room} />
                 <Messages messages={messages} name={name} />
                 <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
+
             </div>
         </div>
     )
