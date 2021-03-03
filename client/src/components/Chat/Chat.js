@@ -14,6 +14,7 @@ const Chat = ({ location }) => {
     const [room, setRoom] = useState('');
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
+    
 
     useEffect(() => {
         const { name, room } = queryString.parse(location.search);
@@ -61,8 +62,8 @@ const Chat = ({ location }) => {
                 <Infobar room={room} />
                 <Messages messages={messages} name={name} />
                 <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
-
             </div>
+            
         </div>
     )
 }

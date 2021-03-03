@@ -1,11 +1,26 @@
 .center {
-    position: absolute;
-    top: 50%;
-    transform: translate(0px, -50%);
-    padding: 10px;
-    margin-top: 31px;
+    position: relative;
+    justify-content: left;
+    align-items: center;
+    padding: 0px;
+    margin-left: auto;
 }
 
 #body-color {
     background-color: blue;
+}
+
+.pixelated {
+    image-rendering: pixelated;
+}
+
+.p-font {
+    font-weight: bold;
+}
+
+.button-hero {
+    position: abolute;
+    color: blue;
+    float: right;
+    margin-bottom: 10%;
 }
