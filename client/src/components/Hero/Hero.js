@@ -18,38 +18,45 @@ const Hero = () => {
         window.open("", '_self').window.close();
 
     }
-    
+
     return (
 
-        <div className="container">
+        <>
             <div className="row">
-                <div className="col-12 col-sm-12 col-md-12">
-                    <img className="" img-fluid = "true" src={ chatLogo } alt="Chat Logo" width="300" height="250" />
+
+                <div className=" text-center  col-12 col-sm-12 col-md-12">
+                    <img className="" img-fluid="true" src={ chatLogo } alt="Chat Logo" width="300" height="250" />
                 </div>
-            </div>
-            <div className="">
-                <div className="row">
-                    <div className="col-12 col-sm-12 col-md-12">
+
+
+                <div className="col-sm-12 col-md-4 col-lg-6">
+                    <div className="text-margin">
                         <Typing speed={ 150 }>
                             <Typing.Delay ms={ 500 } />
-                            <h4>Welcome to Chatter! <br /><br /></h4>
+                            <h4>Welcome to Chatter! </h4>
+                            <br /><br />
                         </Typing>
-                        <p className="text-nowrap p-font"> A place to chat with your friends with no registration required! <br /><br /> Simply Enter a name and create or join a room!</p>
+                        <p className="p-font"> A place to chat with your friends with<mark className="blue" > no registration required!</mark> <br /><br /> Simply Enter a name and create or join a room!</p>
+                        <button className="button-hero" onClick={ routeChange }>Enter</button>
                     </div>
                 </div>
-                <div className="row">
-                    <div className="col-sm-6 col-md-6 ">
-                        <img title = "No Signup Required!" text-center="true" className="pixelated" src = {joinImg} alt = "Join Image" width="200" height="350" />
-                    </div>
-                    <div className="col-sm-6 col-md-6 ">
-                        <h1>Image</h1>
-                    </div>
-                </div>
-                <br/>
-                <button className="button-hero" onClick={ routeChange }>Enter</button>
 
+                
+                    <div className="col-sm-8 col-md-4 col-lg-3 text-center">
+                        <img title="No Signup Required!" text-center="true" className="pixelated" src={ joinImg } alt="Join Image" width="200" height="350" />
+                    </div>
+
+                    <div className="col-sm-8 col-md-3 col-lg-3 text-center">
+                        <img title="No Signup Required!" text-center="true" className="pixelated" src={ joinImg } alt="Join Image" width="200" height="350" />
+                    </div>
+                
+                <br />
+
+                <div className="">
+
+                </div>
             </div>
-        </div>
+        </>
 
 
     )

@@ -19,8 +19,19 @@
 }
 
 .button-hero {
-    position: abolute;
+    float: left;
     color: blue;
-    float: right;
     margin-bottom: 10%;
+    margin-top: 05%;
+    width: 150px;
+    vertical-align: top;
+}
+
+.text-margin {
+    margin-left: 10%;
+}
+
+mark.blue {
+    color: blue;
+    background: none;
 }
