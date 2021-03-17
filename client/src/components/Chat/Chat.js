@@ -6,7 +6,7 @@ import Messages from '../Messages/Messages';
 import Infobar from '../Infobar/Infobar';
 import Input from '../Input/Input';
 
-const ENDPOINT = 'localhost:5000';
+const ENDPOINT = 'https://git.heroku.com/react-node-text-chat.git';
 let socket;
 
 const Chat = ({ location }) => {
