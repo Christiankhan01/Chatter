@@ -19,7 +19,7 @@
 }
 
 .button-hero {
-    float: left;
+    justify-content: center;
     color: blue;
     margin-bottom: 10%;
     margin-top: 05%;
