@@ -6,7 +6,8 @@ import Messages from '../Messages/Messages';
 import Infobar from '../Infobar/Infobar';
 import Input from '../Input/Input';
 
-const ENDPOINT = 'https://git.heroku.com/react-node-text-chat.git';
+const ENDPOINT = 'https://react-node-text-chat.herokuapp.com/';
+
 let socket;
 
 const Chat = ({ location }) => {
@@ -15,11 +16,20 @@ const Chat = ({ location }) => {
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
     
+    
+    
 
     useEffect(() => {
         const { name, room } = queryString.parse(location.search);
 
-        socket = io(ENDPOINT);
+        var connectionOptions =  {
+            "force new connection" : true,
+            "reconnectionAttempts": "Infinity", 
+            "timeout" : 10000,                  
+            "transports" : ["websocket"]
+        };
+
+        socket = io(ENDPOINT, connectionOptions);
 
         setName(name);
         setRoom(room);
